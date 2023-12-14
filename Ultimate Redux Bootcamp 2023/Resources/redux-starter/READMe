@@ -1,0 +1,55 @@
+## webpack.config.js
+Webpack, a popular JavaScript module bundler. This configuration file is typically named webpack.config.js and is used to define how Webpack should process and bundle your JavaScript code.
+
+Let's break down the key parts of this configuration:
+
+### Entry Point:
+entry: "./src/index.js",
+
+This specifies the entry point for your application. Webpack will start bundling your code from this file. In this case, the entry point is index.js in the src directory.
+
+## Output:
+output: {
+    filename: "app.js",
+    path: path.resolve(__dirname, "dist"),
+},
+
+1) filename: This is the name of the bundled file that will be generated. In this case, it's app.js.
+
+2) path: This is the directory where the bundled file will be placed. path.resolve(__dirname, "dist") constructs an absolute path to the dist directory in the same folder as the webpack.config.js file.
+
+### Development Server Configuration:
+devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    port: 3000,
+},
+
+1) contentBase: This is the directory that the development server should serve static files from. In this case, it's the dist directory.
+2) port: This specifies the port on which the development server will run.
+
+### Mode:
+mode: "development",
+
+This sets the mode for Webpack. Setting it to "development" enables certain development-friendly features like easier debugging and faster builds. Other possible values are "production" and "none".
+
+### Path Module:
+const path = require("path");
+
+This imports the Node.js path module, which provides utilities for working with file and directory paths. It's used to construct the absolute path for the dist directory.
+
+In summary, this configuration is telling Webpack to take the code in ./src/index.js, bundle it into a file named app.js, place that file in the dist directory, and run a development server from which the bundled file can be served. The development server will watch for changes in your source code and automatically refresh the browser during development.
+
+
+## package.json
+### scripts : start
+When you run npm start or yarn start in the terminal, it executes the specified command. In this case, the command is:
+webpack-dev-server --config ./webpack.config.js
+
+Let's break down the components of this command:
+
+### webpack-dev-server: 
+This is the command to start the webpack development server. The webpack development server provides live reloading, allowing you to see the changes in your code in real-time as you develop.
+
+### --config ./webpack.config.js: 
+This option specifies the configuration file for webpack. It tells webpack to use the configuration defined in the webpack.config.js file. Without this option, webpack looks for a default configuration file (webpack.config.js in the project root), but using this option allows you to specify a different configuration file.
+

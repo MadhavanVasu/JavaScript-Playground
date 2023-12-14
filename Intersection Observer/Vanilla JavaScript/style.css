@@ -1,0 +1,24 @@
+.cards-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+.card{
+    background-color: hsla(73, 71%, 52%, 0.808);
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: 150ms;
+}
+
+.show{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
