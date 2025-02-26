@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import Child from "./Child";
+import "../styles/styles.scss";
 
 export default function Parent() {
   const [inputText, setInputText] = useState("");
@@ -11,20 +12,27 @@ export default function Parent() {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        className="input-box"
-        placeholder="Enter the text to display"
-        ref={inputRef}
-      />
-      <br />
-      <button type="button" className="submit-button" onClick={handleBtnClick}>
-        {" "}
-        Click here
-      </button>
-      <br />
-      <Child text={inputText} />
-    </div>
+    <>
+      <div className="form-group">
+        <input
+          className="form-field"
+          ref={inputRef}
+          type="text"
+          placeholder="Enter the text"
+        />
+        <button
+          type="button"
+          className="submit-button"
+          onClick={handleBtnClick}
+        >
+          {" "}
+          Click here
+        </button>
+        <br />
+      </div>
+      <div>
+        <Child text={inputText} />
+      </div>
+    </>
   );
 }

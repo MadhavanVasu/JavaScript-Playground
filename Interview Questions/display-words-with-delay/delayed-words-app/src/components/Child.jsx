@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import '../styles/styles.scss';
 export default function Child(props) {
   /* eslint-disable react/prop-types */
   const { text } = props;
@@ -28,5 +28,5 @@ export default function Child(props) {
     };
   }, [text]);
 
-  return <>{displayText}</>;
+  return <div className="display-text">{displayText}</div>;
 }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ep.01 Inception</title>
+  </head>
+  <body>
+    <div id="root">
+      <!-- <h1>Hello World</h1> -->
+    </div>
+    <div id="root2">
+      <!-- <h1>Hello World</h1> -->
+    </div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script>
+      const heading = React.createElement(
+        "h1",
+        { id: "title" },
+        "Hello World from React"
+      );
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(heading);
+
+      // Can have only a single root.
+      // If we try to have more than one root we will get a warning.
+
+      // Warning: You are calling ReactDOMClient.createRoot()
+      // on a container that has already been passed to createRoot() before.
+      // Instead, call root.render() on the existing root instead if you want to update it.
+    </script>
+
+    <!-- <script>
+      const heading = document.createElement("h1");
+      heading.innerHTML = "Hello World from Script tag";
+      const root = document.getElementById("root");
+      root.appendChild(heading);
+    </script> -->
+  </body>
+</html>
